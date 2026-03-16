@@ -1,0 +1,39 @@
+name: Python CI Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run Linting
+        run: flake8 .
+
+      - name: Security Scan
+        run: bandit -r . -ll
+
+      - name: Run Tests with Coverage
+        run: pytest --cov=. --cov-fail-under=80 
+
+  deploy-staging:
+    needs: lint-and-test
+    runs-on: ubuntu-latest
+    environment: staging
+    steps:
+      - name: Simulate Deploy
+        run: echo "Deploying to staging environment..."
