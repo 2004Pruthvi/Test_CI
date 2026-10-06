@@ -10,7 +10,7 @@
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 
 This repository demonstrates an automated **Continuous Integration (CI) and DevSecOps quality gate** built with **GitHub Actions** for Python applications. 
 
@@ -18,7 +18,7 @@ Every commit and pull request against the `main` branch undergoes automated lint
 
 ---
 
-## 🔄 CI Pipeline Architecture
+## CI Pipeline Architecture
 
 ```mermaid
 flowchart LR
@@ -36,7 +36,7 @@ flowchart LR
 
 ---
 
-## 🛡️ Quality & Security Gates Enforced
+## Quality & Security Gates Enforced
 
 | Tool | Pipeline Stage | Security / Engineering Benefit |
 |---|---|---|
@@ -47,7 +47,7 @@ flowchart LR
 
 ---
 
-## 📂 Repository Layout
+## Repository Layout
 
 ```text
 .
@@ -61,7 +61,7 @@ flowchart LR
 
 ---
 
-## 🚀 Running Quality Checks Locally
+## Running Quality Checks Locally
 
 ```bash
 # 1. Install dependencies
